@@ -3,12 +3,11 @@ from saikor_webservice.models import Saikorian
 
 
 class SaikorianSerializer(serializers.Serializer):
-    id = serializers.IntegerField(read_only=True)
     rollNumber=serializers.IntegerField(read_only=False)
     name = serializers.CharField(required=True, allow_blank=False, max_length=100)
-    donation = serializers.DecimalField(required=False, max_digits=10, decimal_places=2)
+    donation = serializers.DecimalField(required=True, max_digits=10, decimal_places=2)
     description = serializers.CharField(required=False, allow_blank=True,)
-    emailId = serializers.EmailField(required=False, allow_blank=True,)
+    emailId = serializers.EmailField(required=True, allow_blank=False,)
 
     def create(self, validated_data):
         """
