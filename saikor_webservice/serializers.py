@@ -3,6 +3,7 @@ from saikor_webservice.models import Saikorian
 
 
 class SaikorianSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
     rollNumber=serializers.IntegerField(read_only=False)
     name = serializers.CharField(required=True, allow_blank=False, max_length=100)
     donation = serializers.DecimalField(required=True, max_digits=10, decimal_places=2)
