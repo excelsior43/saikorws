@@ -15,4 +15,4 @@ class Saikorian(models.Model):
     emailId=models.EmailField(blank=True)
     
     class Meta:
-        ordering = ('rollNumber',)
+        ordering = ('donation',)

@@ -130,7 +130,8 @@ REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
-    )
+    ),
+   
 }
 CORS_ORIGIN_WHITELIST = (
     #'localhost:3000',

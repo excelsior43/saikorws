@@ -20,12 +20,11 @@ class SaikorianSerializer(serializers.Serializer):
         """
         Update and return an existing `Saikorian` instance, given the validated data.
         """
-        instance.id = validated_data.get('id', instance.title)
-        instance.rollNumber = validated_data.get('rollNumber', instance.code)
-        instance.name = validated_data.get('name', instance.linenos)
-        instance.donation = validated_data.get('donation', instance.language)
-        instance.description = validated_data.get('description', instance.style)
-        instance.emailId = validated_data.get('emailId', instance.style)
-        
+        instance.id = validated_data.get('id', instance.id)
+        instance.rollNumber = validated_data.get('rollNumber', instance.rollNumber)
+        instance.name = validated_data.get('name', instance.name)
+        instance.donation = validated_data.get('donation', instance.donation)
+        instance.description = validated_data.get('description', instance.description)
+        instance.emailId = validated_data.get('emailId', instance.emailId)
         instance.save()
         return instance
